@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book a Visit | Tony's Mobile Vets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Book a home visit with Tony's Mobile Vets. Choose a time, tell us about your pet, and we'll come to you."
+    />
+  </head>
+  <body>
+
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">tony's mobile vets</a>
+        <button class="nav__hamburger" type="button" aria-label="Menu" data-nav-toggle>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="nav__links" data-site-nav>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="pricing.html">Plans &amp; Pricing</a>
+          <a href="about-dr-tony.html">About Dr. Tony</a>
+          <a href="services.html">Services</a>
+          <a href="booking.html" class="btn btn--primary btn--small nav__link--active">Book a Visit</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section--white" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container">
+          <div id="booking-root"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>
+          <div class="footer__brand-name">tony's mobile vets</div>
+          <div class="footer__tagline">Healing Happens at Home.</div>
+        </div>
+        <div>
+          <div class="footer__col-title">Quick Links</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pricing.html">Plans &amp; Pricing</a></li>
+            <li><a href="about-dr-tony.html">About Dr. Tony</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Areas We Cover</div>
+          <ul class="footer__links">
+            <li><a href="#">South London</a></li>
+            <li><a href="#">North London</a></li>
+            <li><a href="#">East London</a></li>
+            <li><a href="#">West London</a></li>
+            <li><a href="#">Central</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Get in Touch</div>
+          <ul class="footer__links">
+            <li>hello@tonysmobilevets.com</li>
+            <li>020 XXXX XXXX</li>
+            <li><a href="#">@tonysmobilevets</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Tony's Mobile Vets Ltd. All rights reserved. RCVS Registered Practice.</div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/booking-main.jsx"></script>
+  </body>
+</html>

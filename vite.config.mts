@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: '/tmv-web-prototype/',
+  plugins: [react()],
   build: {
     rollupOptions: {
       input: {
@@ -10,6 +12,7 @@ export default defineConfig({
         pricing: 'pricing.html',
         aboutDrTony: 'about-dr-tony.html',
         services: 'services.html',
+        booking: 'booking.html',
       },
     },
   },
