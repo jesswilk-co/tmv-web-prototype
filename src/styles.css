@@ -1838,9 +1838,9 @@ a {
 }
 
 .pricing-table__total {
-  font-weight: 700;
+  font-weight: 800;
   color: var(--deep-sea-green);
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .pricing-table__free {
