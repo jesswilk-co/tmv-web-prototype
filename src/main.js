@@ -1,8 +1,20 @@
 import './styles.css';
 
-// Pricing tab toggle
-const pricingToggles = document.querySelectorAll('[data-pricing-toggle]');
-const pricingPanels = document.querySelectorAll('[data-pricing-panel]');
+// Mobile nav hamburger toggle
+const navToggle = document.querySelector('[data-nav-toggle]');
+const navLinks = document.querySelector('[data-site-nav]');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('nav__links--open');
+  });
+}
+
+// Pricing tab toggle (existing pages using data-pricing-toggle on tabs)
+const pricingToggles = document.querySelectorAll(
+  '.tabs [data-pricing-toggle]',
+);
+const pricingPanels = document.querySelectorAll('.tabs [data-pricing-panel]');
 
 if (pricingToggles.length && pricingPanels.length) {
   pricingToggles.forEach((toggle) => {
@@ -24,9 +36,52 @@ if (pricingToggles.length && pricingPanels.length) {
   });
 }
 
+// Pricing page toggle (PAYG / Pack Membership)
+const pricingToggleGroup = document.querySelector(
+  '[data-pricing-toggle-group]',
+);
+if (pricingToggleGroup) {
+  const toggleBtns = pricingToggleGroup.querySelectorAll(
+    '[data-pricing-toggle]',
+  );
+  const views = document.querySelectorAll(
+    '.pricing-view[data-pricing-panel]',
+  );
+  const subtitle = document.querySelector('[data-pricing-subtitle]');
+
+  const subtitleMap = {
+    payg: 'Full flexibility, no commitment',
+    sub: 'Save \u00A3260+ per year with the Pack Membership',
+  };
+
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-pricing-toggle');
+      if (!target) return;
+
+      toggleBtns.forEach((b) =>
+        b.classList.toggle('pricing-toggle__btn--active', b === btn),
+      );
+
+      views.forEach((view) =>
+        view.classList.toggle(
+          'pricing-view--active',
+          view.getAttribute('data-pricing-panel') === target,
+        ),
+      );
+
+      if (subtitle && subtitleMap[target]) {
+        subtitle.textContent = subtitleMap[target];
+      }
+    });
+  });
+}
+
 // FAQ accordion — only one open at a time within each group
 document.querySelectorAll('[data-faq-group]').forEach((group) => {
-  const items = group.querySelectorAll('details.faq-item');
+  const items = group.querySelectorAll(
+    'details.faq-item, details.pricing-faq__item',
+  );
   items.forEach((details) => {
     details.addEventListener('toggle', () => {
       if (details.open) {
@@ -37,3 +92,29 @@ document.querySelectorAll('[data-faq-group]').forEach((group) => {
     });
   });
 });
+
+// Pricing FAQ filter buttons
+const faqFilterGroup = document.querySelector('[data-faq-filter-group]');
+if (faqFilterGroup) {
+  const filterBtns = faqFilterGroup.querySelectorAll('[data-faq-filter]');
+  const faqItems = document.querySelectorAll('.pricing-faq__item[data-category]');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-faq-filter');
+
+      filterBtns.forEach((b) =>
+        b.classList.toggle('pricing-faq__filter-btn--active', b === btn),
+      );
+
+      faqItems.forEach((item) => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+        item.open = false;
+      });
+    });
+  });
+}

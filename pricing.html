@@ -13,6 +13,9 @@
     <nav class="nav">
       <div class="container">
         <a href="index.html" class="nav__logo">tony's mobile vets</a>
+        <button class="nav__hamburger" type="button" aria-label="Menu" data-nav-toggle>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
         <div class="nav__links" data-site-nav>
           <a href="how-it-works.html">How It Works</a>
           <a href="pricing.html" class="nav__link--active">Plans &amp; Pricing</a>
@@ -24,518 +27,443 @@
     </nav>
 
     <main>
-      <section class="hero hero--inner">
-        <div class="container">
-          <div class="hero__content">
-            <h1 class="hero__title">Choose the way you'd like to care for your pet.</h1>
-            <p class="hero__body">Two clear paths: Pay As You Go for full flexibility, or Pack Membership for predictable monthly costs and £260+ annual savings.</p>
-            <div class="pill-row mt-1">
-              <span class="pill">
-                <span class="pill__label">New clients</span>
-                First visit just £99 — consultation fee waived
-              </span>
-              <span class="pill">
-                <span class="pill__label">Members</span>
-                Up to 3 home visits a year included
-              </span>
-            </div>
-          </div>
-          <div class="hero__aside">
-            <div class="hero__aside-title">How pricing works.</div>
-            <p class="hero__aside-body">
-              Every visit has two parts: a home visit fee and a treatment fee. The tables below show
-              both, plus the total you'll pay. There are no hidden charges — the price you see is the
-              price you pay.
-            </p>
-          </div>
-        </div>
+
+      <!-- HERO -->
+      <section class="pricing-hero">
+        <div class="pricing-hero__badge">TRANSPARENT PRICING</div>
+        <h1>Honest pricing. No surprises.</h1>
+        <p>We're here to help. You can pay-as-you-go, or become a member to save up to &pound;260 every year.</p>
       </section>
 
-      <section class="section section--white">
+      <!-- INCLUDED STRIP -->
+      <div class="pricing-included-strip">
+        <p><strong>Every home visit includes:</strong> 60-minute appointment &bull; full nose-to-tail health check &bull; microchip scan &bull; personalised advice from your vet</p>
+      </div>
+
+      <!-- TOGGLE + PRICING CONTENT -->
+      <section class="section--white" style="padding-bottom: 0;">
         <div class="container">
-          <div class="tabs">
-            <div class="tabs__list">
-              <button
-                class="tabs__tab tabs__tab--active"
-                type="button"
-                data-pricing-toggle="payg"
-              >
-                Pay As You Go
-              </button>
-              <button class="tabs__tab" type="button" data-pricing-toggle="membership">
-                Pack Membership
-              </button>
+          <div class="pricing-toggle" data-pricing-toggle-group>
+            <button class="pricing-toggle__btn pricing-toggle__btn--active" type="button" data-pricing-toggle="payg">Pay As You Go</button>
+            <button class="pricing-toggle__btn" type="button" data-pricing-toggle="sub">Pack Membership</button>
+          </div>
+          <p class="pricing-toggle__subtitle" data-pricing-subtitle>Full flexibility, no commitment</p>
+
+          <!-- PAYG VIEW -->
+          <div class="pricing-view pricing-view--active" data-pricing-panel="payg" id="payg">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Home Visit</th>
+                  <th>Treatment</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="pricing-table__section"><td colspan="4">New Customers</td></tr>
+                <tr>
+                  <td>First visit (single pet)</td>
+                  <td>&pound;99</td>
+                  <td><span class="pricing-table__free">Waived</span></td>
+                  <td class="pricing-table__total">&pound;99</td>
+                </tr>
+                <tr>
+                  <td>Additional pet <span class="pricing-table__subtle">(add to first visit)</span></td>
+                  <td><span class="pricing-table__free">Waived</span></td>
+                  <td>&pound;50</td>
+                  <td class="pricing-table__total">&pound;50</td>
+                </tr>
+                <tr>
+                  <td>Follow-up within 14 days <span class="pricing-table__subtle">(if required)</span></td>
+                  <td>&pound;99</td>
+                  <td>&pound;20</td>
+                  <td class="pricing-table__total">&pound;119</td>
+                </tr>
+                <tr>
+                  <td>Certificate for additional pet <span class="pricing-table__subtle">(same visit)</span></td>
+                  <td class="pricing-table__subtle">&mdash;</td>
+                  <td>&pound;80</td>
+                  <td class="pricing-table__total">&pound;80</td>
+                </tr>
+
+                <tr class="pricing-table__section"><td colspan="4">Consultations</td></tr>
+                <tr>
+                  <td>Vet consultation</td>
+                  <td>&pound;125</td>
+                  <td>&pound;85</td>
+                  <td class="pricing-table__total">&pound;210</td>
+                </tr>
+                <tr>
+                  <td>Nurse consultation</td>
+                  <td>&pound;125</td>
+                  <td>&pound;50</td>
+                  <td class="pricing-table__total">&pound;175</td>
+                </tr>
+                <tr>
+                  <td>Multi-pet fee <span class="pricing-table__subtle">(per additional pet)</span></td>
+                  <td><span class="pricing-table__free">Waived</span></td>
+                  <td>&pound;85</td>
+                  <td class="pricing-table__total">&pound;85</td>
+                </tr>
+
+                <tr class="pricing-table__section"><td colspan="4">Vaccinations</td></tr>
+                <tr>
+                  <td>Puppy / kitten vaccination</td>
+                  <td>&pound;125</td>
+                  <td>&pound;50</td>
+                  <td class="pricing-table__total">&pound;175</td>
+                </tr>
+                <tr>
+                  <td>Annual booster (cat / dog)</td>
+                  <td>&pound;125</td>
+                  <td>&pound;55</td>
+                  <td class="pricing-table__total">&pound;180</td>
+                </tr>
+                <tr>
+                  <td>Annual booster (rabbit)</td>
+                  <td>&pound;125</td>
+                  <td>&pound;65</td>
+                  <td class="pricing-table__total">&pound;190</td>
+                </tr>
+                <tr>
+                  <td>Rabies vaccination</td>
+                  <td>&pound;125</td>
+                  <td>&pound;65</td>
+                  <td class="pricing-table__total">&pound;190</td>
+                </tr>
+
+                <tr class="pricing-table__section"><td colspan="4">Add-ons (same visit)</td></tr>
+                <tr><td>Nail clipping</td><td class="pricing-table__subtle">&mdash;</td><td>&pound;10</td><td class="pricing-table__total">&pound;10</td></tr>
+                <tr><td>Anal gland treatment</td><td class="pricing-table__subtle">&mdash;</td><td>&pound;10</td><td class="pricing-table__total">&pound;10</td></tr>
+                <tr><td>Dewormer tablet</td><td class="pricing-table__subtle">&mdash;</td><td>&pound;10</td><td class="pricing-table__total">&pound;10</td></tr>
+                <tr><td>Kennel cough vaccination</td><td class="pricing-table__subtle">&mdash;</td><td>&pound;45</td><td class="pricing-table__total">&pound;45</td></tr>
+                <tr><td>Microchipping</td><td class="pricing-table__subtle">&mdash;</td><td>&pound;45</td><td class="pricing-table__total">&pound;45</td></tr>
+                <tr><td>Written prescription</td><td class="pricing-table__subtle">&mdash;</td><td>&pound;20</td><td class="pricing-table__total">&pound;20</td></tr>
+
+                <tr class="pricing-table__section"><td colspan="4">Travel Support</td></tr>
+                <tr>
+                  <td>Animal Health Certificate</td>
+                  <td>&pound;125</td>
+                  <td>&pound;150</td>
+                  <td class="pricing-table__total">&pound;275</td>
+                </tr>
+                <tr>
+                  <td>AHC &mdash; additional pet</td>
+                  <td class="pricing-table__subtle">&mdash;</td>
+                  <td>&pound;80</td>
+                  <td class="pricing-table__total">&pound;80</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="pricing-eol">
+              <h3>End of Life Care</h3>
+              <p>Our end-of-life care packages start at &pound;450. Our team will share options with you, depending on how you want to say goodbye and remember your pet.</p>
+              <a href="#book" class="btn btn--outline mt-1">Get in touch</a>
             </div>
-            <div class="tabs__panels">
-              <div class="tabs__panel tabs__panel--active" data-pricing-panel="payg" id="payg">
-                <h2 class="section-heading mt-0">Pay As You Go.</h2>
-                <p class="section__subtitle">
-                  Full flexibility, no commitment. You pay a home visit fee plus a clear treatment fee
-                  for each service.
-                </p>
+          </div>
 
-                <h3 class="mb-0-5 mt-2">New customers.</h3>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Service</th>
-                      <th>Home visit</th>
-                      <th>Treatment</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>First visit (single pet)</td>
-                      <td>£99</td>
-                      <td>Waived</td>
-                      <td class="price-highlight">£99</td>
-                    </tr>
-                    <tr>
-                      <td>Additional pet (add to first visit)</td>
-                      <td>Waived</td>
-                      <td>£50</td>
-                      <td class="price-highlight">£50</td>
-                    </tr>
-                    <tr>
-                      <td>Follow-up within 14 days (if required)</td>
-                      <td>£99</td>
-                      <td>£20</td>
-                      <td class="price-highlight">£119</td>
-                    </tr>
-                    <tr>
-                      <td>Certificate for additional pet (same visit)</td>
-                      <td>—</td>
-                      <td>£80</td>
-                      <td class="price-highlight">£80</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h3 class="mb-0-5 mt-2">Consultations.</h3>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Service</th>
-                      <th>Home visit</th>
-                      <th>Treatment</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Vet consultation</td>
-                      <td>£125</td>
-                      <td>£85</td>
-                      <td class="price-highlight">£210</td>
-                    </tr>
-                    <tr>
-                      <td>Nurse consultation</td>
-                      <td>£125</td>
-                      <td>£50</td>
-                      <td class="price-highlight">£175</td>
-                    </tr>
-                    <tr>
-                      <td>Multi-pet fee (per additional pet)</td>
-                      <td>Waived</td>
-                      <td>£85</td>
-                      <td class="price-highlight">£85</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h3 class="mb-0-5 mt-2">Vaccinations.</h3>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Service</th>
-                      <th>Home visit</th>
-                      <th>Treatment</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Puppy / kitten vaccination</td>
-                      <td>£125</td>
-                      <td>£50</td>
-                      <td class="price-highlight">£175</td>
-                    </tr>
-                    <tr>
-                      <td>Annual booster (cat / dog)</td>
-                      <td>£125</td>
-                      <td>£55</td>
-                      <td class="price-highlight">£180</td>
-                    </tr>
-                    <tr>
-                      <td>Annual booster (rabbit)</td>
-                      <td>£125</td>
-                      <td>£65</td>
-                      <td class="price-highlight">£190</td>
-                    </tr>
-                    <tr>
-                      <td>Rabies vaccination</td>
-                      <td>£125</td>
-                      <td>£65</td>
-                      <td class="price-highlight">£190</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h3 class="mb-0-5 mt-2">Add-ons (same visit — no extra home visit fee).</h3>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Service</th>
-                      <th>Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Nail clipping</td>
-                      <td>£10</td>
-                    </tr>
-                    <tr>
-                      <td>Anal gland treatment</td>
-                      <td>£10</td>
-                    </tr>
-                    <tr>
-                      <td>Dewormer tablet</td>
-                      <td>£10</td>
-                    </tr>
-                    <tr>
-                      <td>Kennel cough vaccination</td>
-                      <td>£45</td>
-                    </tr>
-                    <tr>
-                      <td>Microchipping</td>
-                      <td>£45</td>
-                    </tr>
-                    <tr>
-                      <td>Written prescription</td>
-                      <td>£20</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h3 class="mb-0-5 mt-2">Travel support.</h3>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Service</th>
-                      <th>Home visit</th>
-                      <th>Treatment</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Animal Health Certificate</td>
-                      <td>£125</td>
-                      <td>£150</td>
-                      <td class="price-highlight">£275</td>
-                    </tr>
-                    <tr>
-                      <td>AHC — additional pet</td>
-                      <td>—</td>
-                      <td>£80</td>
-                      <td class="price-highlight">£80</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h3 class="mb-0-5 mt-2">End-of-life care.</h3>
-                <p class="text-small text-muted">
-                  Our end-of-life care packages start at <span class="price-highlight">£450</span>. Our
-                  team will share options with you, depending on how you want to say goodbye and
-                  remember your pet.
-                </p>
+          <!-- PACK MEMBERSHIP VIEW -->
+          <div class="pricing-view" data-pricing-panel="sub" id="membership">
+            <div class="pricing-sub-card">
+              <div class="pricing-sub-card__header">
+                <h2>Pack Membership</h2>
+                <div class="pricing-sub-card__price">&pound;39 <span>/month per pet</span></div>
+                <div class="pricing-sub-card__price-note">20% off each additional pet in the same household</div>
               </div>
 
-              <div class="tabs__panel" data-pricing-panel="membership" id="membership">
-                <h2 class="section-heading mt-0">Pack Membership.</h2>
-                <p class="section__subtitle">
-                  One simple monthly membership that keeps on top of routine care and rewards you with
-                  meaningful savings.
-                </p>
+              <div class="pricing-sub-card__body">
+                <h3>What's included</h3>
+                <ul class="pricing-benefit-list">
+                  <li><span class="pricing-benefit-list__check">&check;</span> Up to 3 home visits per year (worth &pound;375)</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> Full 60-min consultation at every visit</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> Annual booster vaccination included</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> Free nail clipping at every visit</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> Free anal gland treatment at every visit</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> Free dewormer tablet at every visit</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> 15% off all other treatments and services</li>
+                  <li><span class="pricing-benefit-list__check">&check;</span> Certificate for additional pet (same visit)</li>
+                </ul>
 
-                <div class="card-grid mt-2">
-                  <article class="card">
-                    <div class="card__eyebrow">Membership</div>
-                    <h3 class="card__title">£39/month per pet.</h3>
-                    <p class="card__body">
-                      Up to 3 home visits per year (worth £375), each with a full 60-minute
-                      consultation. 20% off for each additional pet in the same household (£31.20/month).
-                    </p>
-                  </article>
-                  <article class="card">
-                    <div class="card__eyebrow">What's included</div>
-                    <p class="card__body">
-                      Annual booster vaccination, free nail clipping, anal gland treatment, and
-                      dewormer tablet at every visit, plus 15% off all other treatments and services.
-                    </p>
-                  </article>
-                  <article class="card">
-                    <div class="card__eyebrow">Discounts</div>
-                    <p class="card__body">
-                      20% seniors' discount (over 65s) and 20% students' discount (under 25s) on
-                      membership fees.
-                    </p>
-                  </article>
-                  <article class="card">
-                    <div class="card__eyebrow">Terms</div>
-                    <p class="card__body">
-                      12-month commitment. Pay monthly or upfront (upfront saves 10%). If you cancel
-                      early, your benefits continue until the end of that billing month. Additional
-                      visits beyond 3 are charged at PAYG rates with your 15% member discount.
-                    </p>
-                  </article>
+                <div class="pricing-discount-badges">
+                  <div class="pricing-discount-badge">
+                    <span class="pricing-discount-badge__icon">&#x1F474;</span>
+                    <span><strong>20% seniors' discount</strong><br>Over 65s</span>
+                  </div>
+                  <div class="pricing-discount-badge">
+                    <span class="pricing-discount-badge__icon">&#x1F393;</span>
+                    <span><strong>20% students' discount</strong><br>Under 25s</span>
+                  </div>
                 </div>
 
-                <h3 class="mb-0-5 mt-2">Annual savings breakdown.</h3>
-                <table class="table">
+                <div class="pricing-savings">
+                  <h4>Your annual savings</h4>
+                  <div class="pricing-savings__row"><span>3 home visits</span><span>&pound;630 value</span></div>
+                  <div class="pricing-savings__row"><span>Annual vaccination</span><span>&pound;8 value</span></div>
+                  <div class="pricing-savings__row"><span>Free add-ons (nails, glands, dewormer)</span><span>&pound;90 value</span></div>
+                  <div class="pricing-savings__row"><span>Membership cost</span><span>&minus;&pound;468/year</span></div>
+                  <div class="pricing-savings__row pricing-savings__row--total"><span>You save</span><span>&pound;260+ per year</span></div>
+                </div>
+
+                <h3>Member prices (15% off)</h3>
+                <table class="pricing-member-table">
                   <thead>
-                    <tr>
-                      <th>Item</th>
-                      <th>Value</th>
-                    </tr>
+                    <tr><th>Service</th><th>Standard</th><th>Your price</th></tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>3 home visits</td>
-                      <td>£630</td>
-                    </tr>
-                    <tr>
-                      <td>Annual vaccination</td>
-                      <td>£8</td>
-                    </tr>
-                    <tr>
-                      <td>Free add-ons (nails, glands, dewormer)</td>
-                      <td>£90</td>
-                    </tr>
-                    <tr>
-                      <td>Membership cost</td>
-                      <td>−£468/year</td>
-                    </tr>
-                    <tr>
-                      <td><strong>You save</strong></td>
-                      <td class="price-highlight"><strong>£260+ per year</strong></td>
-                    </tr>
+                    <tr class="pricing-member-table__section"><td colspan="3">Consultations</td></tr>
+                    <tr><td>Vet consultation</td><td>&pound;85</td><td>&pound;72.25</td></tr>
+                    <tr><td>Nurse consultation</td><td>&pound;50</td><td>&pound;42.50</td></tr>
+                    <tr><td>Multi-pet fee</td><td>&pound;85</td><td>&pound;72.25</td></tr>
+
+                    <tr class="pricing-member-table__section"><td colspan="3">Vaccinations</td></tr>
+                    <tr><td>Puppy / kitten vaccination</td><td>&pound;50</td><td>&pound;42.50</td></tr>
+                    <tr><td>Annual booster (cat / dog)</td><td>&pound;55</td><td>&pound;46.75</td></tr>
+                    <tr><td>Annual booster (rabbit)</td><td>&pound;65</td><td>&pound;55.25</td></tr>
+                    <tr><td>Rabies vaccination</td><td>&pound;65</td><td>&pound;55.25</td></tr>
+
+                    <tr class="pricing-member-table__section"><td colspan="3">Add-ons</td></tr>
+                    <tr><td>Kennel cough vaccination</td><td>&pound;45</td><td>&pound;38.25</td></tr>
+                    <tr><td>Microchipping</td><td>&pound;45</td><td>&pound;38.25</td></tr>
+                    <tr><td>Written prescription</td><td>&pound;20</td><td>&pound;17.00</td></tr>
+
+                    <tr class="pricing-member-table__section"><td colspan="3">Travel</td></tr>
+                    <tr><td>Animal Health Certificate</td><td>&pound;150</td><td>&pound;127.50</td></tr>
+                    <tr><td>AHC &mdash; additional pet</td><td>&pound;80</td><td>&pound;68.00</td></tr>
                   </tbody>
                 </table>
 
-                <h3 class="mb-0-5 mt-2">Member prices (15% off treatment fees).</h3>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Service</th>
-                      <th>Standard</th>
-                      <th>Member price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Vet consultation</td>
-                      <td>£85</td>
-                      <td>£72.25</td>
-                    </tr>
-                    <tr>
-                      <td>Nurse consultation</td>
-                      <td>£50</td>
-                      <td>£42.50</td>
-                    </tr>
-                    <tr>
-                      <td>Multi-pet fee</td>
-                      <td>£85</td>
-                      <td>£72.25</td>
-                    </tr>
-                    <tr>
-                      <td>Puppy / kitten vaccination</td>
-                      <td>£50</td>
-                      <td>£42.50</td>
-                    </tr>
-                    <tr>
-                      <td>Annual booster (cat / dog)</td>
-                      <td>£55</td>
-                      <td>£46.75</td>
-                    </tr>
-                    <tr>
-                      <td>Annual booster (rabbit)</td>
-                      <td>£65</td>
-                      <td>£55.25</td>
-                    </tr>
-                    <tr>
-                      <td>Rabies vaccination</td>
-                      <td>£65</td>
-                      <td>£55.25</td>
-                    </tr>
-                    <tr>
-                      <td>Kennel cough vaccination</td>
-                      <td>£45</td>
-                      <td>£38.25</td>
-                    </tr>
-                    <tr>
-                      <td>Microchipping</td>
-                      <td>£45</td>
-                      <td>£38.25</td>
-                    </tr>
-                    <tr>
-                      <td>Written prescription</td>
-                      <td>£20</td>
-                      <td>£17.00</td>
-                    </tr>
-                    <tr>
-                      <td>Animal Health Certificate</td>
-                      <td>£150</td>
-                      <td>£127.50</td>
-                    </tr>
-                    <tr>
-                      <td>AHC — additional pet</td>
-                      <td>£80</td>
-                      <td>£68.00</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <h3 class="mb-0-5 mt-2">End-of-life care for members.</h3>
-                <p class="text-small text-muted">
-                  Our end-of-life care packages start at <span class="price-highlight">£450</span>.
-                  Pack Members receive a discount on all end-of-life services. Our team will guide you
-                  through every decision with compassion and care.
-                </p>
-
-                <div class="mt-2">
-                  <a href="#book" class="btn btn--primary">Join the Pack</a>
-                </div>
+                <a href="#book" class="pricing-cta-btn">Join the Pack &rarr;</a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section section--soft-teal">
-        <div class="container">
-          <div class="eyebrow">Questions answered</div>
-          <h2 class="section-heading">Pricing &amp; membership FAQs.</h2>
-          <div class="faq-list" data-faq-group>
-            <div class="faq-group">
-              <div class="faq-group__title">Pricing.</div>
-              <details class="faq-item">
-                <summary>
-                  What does a typical visit cost?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  Every visit has two clear parts: a home visit fee and a treatment fee. For example, an
-                  annual dog booster is £125 (home visit) + £55 (vaccination) = £180 total. There are
-                  never any hidden charges — the total you see is the total you pay. Add-ons like nail
-                  clipping (£10) can be added to any visit without an extra home visit fee.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Why is a home visit more expensive than going to a clinic?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  When you factor in travel time, petrol, parking (often £5–10 in central London), taxi
-                  fares, and the stress on your pet, a clinic visit costs more than the consultation fee
-                  alone. Our vet comes to you with a fully equipped mobile clinic, spends a full 60
-                  minutes with your pet in their own home, and there's no waiting room.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  I have more than one pet — do I pay a home visit fee for each?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  No. You pay one home visit fee per visit, regardless of how many pets are seen.
-                  Additional pets on the same visit are charged only the treatment fee (for example, £85
-                  per additional pet consultation, or £50 per additional pet vaccination).
-                </div>
-              </details>
-            </div>
-
-            <div class="faq-group">
-              <div class="faq-group__title">Pack Membership.</div>
-              <details class="faq-item">
-                <summary>
-                  What does the Pack Membership include?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  For £39/month per pet, you get up to 3 home visits per year (including full
-                  consultation), an annual booster vaccination, free nail clipping, anal gland
-                  treatment, and dewormer at every visit, and 15% off all other treatments and
-                  services.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  What happens if I need more than 3 visits in a year?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  Additional visits beyond your included 3 are charged at standard Pay As You Go rates,
-                  but you'll still receive your 15% member discount on all treatment fees. The home
-                  visit fee applies for visits beyond your allowance.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  I have two pets — is there a multi-pet discount on the membership?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  Yes. The first pet is £39/month. Each additional pet in the same household is 20% off
-                  — so £31.20/month. Both pets get the full membership benefits.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Can I cancel my membership?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  The Pack Membership is a 12-month commitment. You can choose to pay monthly or
-                  upfront — paying upfront saves you 10%. If you cancel before the end of your 12
-                  months, you keep your benefits until the end of that billing month.
-                </div>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  I'm already paying for pet insurance — why do I need a membership?
-                  <span class="faq__toggle">+</span>
-                </summary>
-                <div class="faq__answer">
-                  Pet memberships cover routine costs like vaccinations and check-ups. Pet insurance
-                  covers unexpected, high-cost emergencies and illnesses. They work well together — one
-                  handles the everyday, the other handles the unexpected.
-                </div>
-              </details>
+            <div class="pricing-eol">
+              <h3>End of Life Care</h3>
+              <p>Our end-of-life care packages start at &pound;450. Members receive a discount on all end-of-life services. Our team will guide you through your options with compassion and care.</p>
+              <a href="#book" class="btn btn--outline mt-1">Get in touch</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section section--white section--tight" id="book">
+      <!-- VALUE COMPARISON -->
+      <section class="pricing-value">
+        <h2>Why a home visit is worth it</h2>
+        <p class="pricing-value__subtitle">Our appointments are stress-free and 3&ndash;4&times; longer than most clinics</p>
+        <div class="pricing-value__cards">
+          <div class="pricing-value__card">
+            <div class="pricing-value__card-icon">&#x1F697;</div>
+            <h4>No travel</h4>
+            <p>Save on petrol, parking, and the stress of navigating London traffic with an anxious pet</p>
+          </div>
+          <div class="pricing-value__card">
+            <div class="pricing-value__card-icon">&#x23F1;&#xFE0F;</div>
+            <h4>No waiting room</h4>
+            <p>Your appointment starts on time, at home. No sitting with barking dogs and stressed cats</p>
+          </div>
+          <div class="pricing-value__card">
+            <div class="pricing-value__card-icon">&#x1F43E;</div>
+            <h4>Less stress for your pet</h4>
+            <p>Pets are calmer at home. Better for them, more accurate for the vet, easier for you</p>
+          </div>
+          <div class="pricing-value__card">
+            <div class="pricing-value__card-icon">&#x1F46A;</div>
+            <h4>The whole family can be there</h4>
+            <p>Kids, partners, housemates &mdash; everyone can meet the vet and hear the advice first-hand</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="pricing-faq">
+        <h2>Frequently asked questions</h2>
+        <p class="pricing-faq__subtitle">Click any question to see the answer</p>
+
+        <div class="pricing-faq__filters" data-faq-filter-group>
+          <button class="pricing-faq__filter-btn pricing-faq__filter-btn--active" type="button" data-faq-filter="all">All</button>
+          <button class="pricing-faq__filter-btn" type="button" data-faq-filter="pricing">Pricing</button>
+          <button class="pricing-faq__filter-btn" type="button" data-faq-filter="subscription">Pack Membership</button>
+          <button class="pricing-faq__filter-btn" type="button" data-faq-filter="visits">Visits</button>
+          <button class="pricing-faq__filter-btn" type="button" data-faq-filter="services">Services</button>
+        </div>
+
+        <div class="pricing-faq__list" data-faq-group>
+
+          <details class="pricing-faq__item" data-category="pricing">
+            <summary class="pricing-faq__question">
+              <span>What does a typical visit cost?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Every visit has two clear parts: a home visit fee and a treatment fee. For example, an annual dog booster is &pound;125 (home visit) + &pound;55 (vaccination) = &pound;180 total. There are never any hidden charges &mdash; the total you see is the total you pay. Add-ons like nail clipping (&pound;10) can be added to any visit without an extra home visit fee.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="pricing">
+            <summary class="pricing-faq__question">
+              <span>Why is a home visit more expensive than going to a clinic?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>When you factor in travel time, petrol, parking (often &pound;5&ndash;10 in central London), taxi fares, and the stress on your pet, a clinic visit costs more than the consultation fee alone. Animals are also experts at masking symptoms &mdash; in a stressful clinic environment, they can hide signs your vet needs to see. Our vet comes to you with a fully equipped mobile clinic, spends a full 60 minutes with your pet in their own home, and there's no waiting room. Many of our clients find the total cost &mdash; and the experience &mdash; compares favourably with a clinic once you account for the hidden costs of getting there.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="pricing">
+            <summary class="pricing-faq__question">
+              <span>I have more than one pet &mdash; do I pay a home visit fee for each?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>No. You pay one home visit fee per visit, regardless of how many pets are seen. Additional pets on the same visit are charged only the treatment fee (e.g., &pound;85 per additional pet consultation, or &pound;50 per additional pet vaccination). This makes multi-pet households significantly better value.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="subscription">
+            <summary class="pricing-faq__question">
+              <span>What does the Pack Membership include?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>For &pound;39/month per pet, you get up to 3 home visits per year (including full consultation), an annual booster vaccination, free nail clipping, anal gland treatment, and dewormer at every visit, and 15% off all other treatments and services.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="subscription">
+            <summary class="pricing-faq__question">
+              <span>What happens if I need more than 3 visits in a year?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Additional visits beyond your included 3 are charged at standard PAYG rates, but you'll still receive your 15% member discount on all treatment fees. The home visit fee applies for visits beyond your allowance.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="subscription">
+            <summary class="pricing-faq__question">
+              <span>I have two pets &mdash; is there a multi-pet discount on the membership?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Yes. The first pet is &pound;39/month. Each additional pet in the same household is 20% off &mdash; so &pound;31.20/month. Both pets get the full membership benefits including included visits, vaccinations, and discounts.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="subscription">
+            <summary class="pricing-faq__question">
+              <span>Can I cancel my membership?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>The Pack Membership is a 12-month commitment. You can choose to pay monthly or upfront &mdash; paying upfront saves you 10%. If you cancel before the end of your 12 months, you keep your benefits until the end of that billing month. You can always switch back to pay-as-you-go pricing when your commitment ends.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="subscription">
+            <summary class="pricing-faq__question">
+              <span>I'm already paying for pet insurance &mdash; why do I need a membership?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Pet memberships like ours cover routine costs like vaccinations and check-ups. It helps save on regular expenses, whereas pet insurance covers unexpected, high-cost emergencies and illnesses. Memberships are ideal for helping to budget annual care, while insurance protects against major financial burdens. They work well together &mdash; one handles the everyday, the other handles the unexpected.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="visits">
+            <summary class="pricing-faq__question">
+              <span>What area do you cover?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>We cover most of Greater London. Enter your postcode on our booking page to check availability in your area. We're expanding our coverage all the time.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="visits">
+            <summary class="pricing-faq__question">
+              <span>How long is each appointment?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Every appointment is 60 minutes as standard. That's 3&ndash;4 times longer than a typical 15-minute clinic consultation. It means we can do a thorough health check, deliver any treatments, answer all your questions, and still have time to give your pet some fuss.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="visits">
+            <summary class="pricing-faq__question">
+              <span>What's included in the first visit for new customers?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Your first visit is just &pound;99 &mdash; and the consultation fee is waived. It's a full 60-minute appointment including a comprehensive health check, microchip scan, and time to discuss your pet's needs. It's our way of letting you experience Tony's difference before committing. Additional pets are just &pound;50 each on your first visit.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="services">
+            <summary class="pricing-faq__question">
+              <span>Can you do surgeries or operations at home?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>We don't perform surgical procedures like spaying or neutering at home. We focus on what can be done brilliantly in a home setting: consultations, vaccinations, health checks, microchipping, prescriptions, blood tests, and end-of-life care. If your pet needs surgery, we'll refer you to a trusted clinic partner and coordinate the handover.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="services">
+            <summary class="pricing-faq__question">
+              <span>Do you do Animal Health Certificates for travel?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Yes. We can issue Animal Health Certificates at home &mdash; no need to take your pet to a clinic before a stressful journey. The cost is &pound;275 (&pound;125 home visit + &pound;150 certificate). For Pack Members using one of their included visits, the certificate is just &pound;126.50 (15% member discount on &pound;150). Additional pets on the same visit are &pound;80 each (&pound;68 for members).</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="services">
+            <summary class="pricing-faq__question">
+              <span>How does end-of-life care work?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Saying goodbye at home, surrounded by family, is one of the most important things we do. Our end-of-life care packages start at &pound;450 and we'll talk through everything &mdash; sedation, the procedure, aftercare, and memorial options &mdash; so you can choose what feels right. Pack Members receive a discount. We'll guide you every step of the way.</p>
+            </div>
+          </details>
+
+          <details class="pricing-faq__item" data-category="services">
+            <summary class="pricing-faq__question">
+              <span>How do I know if my puppy or kitten needs a vaccine?</span>
+              <span class="pricing-faq__arrow">&#x25BE;</span>
+            </summary>
+            <div class="pricing-faq__answer">
+              <p>Puppies and kittens need a primary course of vaccinations to build up their immunity. This usually involves two or three injections, given a few weeks apart. If you've just brought your new pet home, check with the breeder, rescue, or previous owner to find out which vaccinations have already been given and which brand was used &mdash; it's important to continue with the same brand for the full course.</p>
+              <p style="margin-top: 10px;">If your puppy or kitten has already had their first vaccination, we can continue the course at home. If they haven't started yet, we can begin the full course with you. Puppy and kitten vaccinations are &pound;175 per visit (&pound;125 home visit + &pound;50 vaccination). Once the primary course is complete, your pet will need an annual booster to stay protected.</p>
+              <p style="margin-top: 10px;">If you're not sure what your pet has had or what they need next, just get in touch and we'll help you work it out.</p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="section--white section--tight" id="book">
         <div class="container">
           <div class="cta-band">
             <div>
-              <div class="cta-band__title">Start with a £99 first visit.</div>
+              <div class="cta-band__title">Start with a &pound;99 first visit.</div>
               <p class="cta-band__body">
                 Try Tony's Mobile Vets with a one-off home visit, then decide whether Pay As You Go or
                 Pack Membership is right for you.
               </p>
             </div>
             <div class="cta-band__actions">
-              <a href="#" class="btn btn--primary">Book your first visit — £99</a>
+              <a href="#" class="btn btn--primary">Book your first visit &mdash; &pound;99</a>
               <a href="#membership" class="btn btn--outline">Join the Pack</a>
             </div>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="footer">
