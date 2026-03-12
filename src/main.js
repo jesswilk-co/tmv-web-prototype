@@ -1,16 +1,6 @@
 import './styles.css';
 
-// Simple nav toggle for small screens (if needed later)
-const navToggle = document.querySelector('[data-nav-toggle]');
-const nav = document.querySelector('[data-site-nav]');
-
-if (navToggle && nav) {
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('site-nav--open');
-  });
-}
-
-// Pricing toggle logic
+// Pricing tab toggle
 const pricingToggles = document.querySelectorAll('[data-pricing-toggle]');
 const pricingPanels = document.querySelectorAll('[data-pricing-panel]');
 
@@ -34,15 +24,13 @@ if (pricingToggles.length && pricingPanels.length) {
   });
 }
 
-// FAQ accordion using <details> is mostly native, but we can ensure only one open at a time
-const faqGroups = document.querySelectorAll('[data-faq-group]');
-
-faqGroups.forEach((group) => {
-  const detailsList = group.querySelectorAll('details');
-  detailsList.forEach((details) => {
+// FAQ accordion — only one open at a time within each group
+document.querySelectorAll('[data-faq-group]').forEach((group) => {
+  const items = group.querySelectorAll('details.faq-item');
+  items.forEach((details) => {
     details.addEventListener('toggle', () => {
       if (details.open) {
-        detailsList.forEach((other) => {
+        items.forEach((other) => {
           if (other !== details) other.open = false;
         });
       }
