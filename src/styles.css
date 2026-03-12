@@ -684,10 +684,22 @@ a {
 /* ── LIST GRID ──────────────────────────────────────────── */
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   max-width: 800px;
   margin: 24px auto 0;
+}
+
+.list-grid--stack {
+  grid-template-columns: 1fr;
+  max-width: none;
+}
+
+@media (max-width: 600px) {
+  .list-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
 }
 
 .list-grid__item {
