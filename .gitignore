@@ -27,5 +27,8 @@ Thumbs.db
 .cache/
 vite.config.ts.timestamp-*
 
+# Reference / business files
+reference/
+
 # Keep lockfile for fast GitHub Pages deploys
 !package-lock.json
