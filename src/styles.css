@@ -2375,3 +2375,105 @@ a {
     font-size: 0.85rem;
   }
 }
+
+/* ── END OF LIFE PAGE ──────────────────────────────────── */
+
+.eol-hero .hero__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+}
+
+.eol-card {
+  border-color: var(--border);
+}
+
+.eol-card:hover {
+  box-shadow: var(--shadow);
+  transform: none;
+}
+
+.eol-aside {
+  border-color: var(--border);
+  background: var(--ivory);
+}
+
+.eol-step-card {
+  text-align: left;
+}
+
+.eol-step-card .step-card__index {
+  background: var(--seaweed);
+}
+
+.eol-aftercare-grid {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eol-pricing-section {
+  padding-bottom: 48px;
+}
+
+.eol-price-group {
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.eol-price-group__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--deep-sea-green);
+  margin-bottom: 8px;
+}
+
+.eol-price-group__note {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.eol-pricing-table {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+}
+
+.eol-pricing-table th {
+  border-bottom: 2px solid var(--border);
+  background: var(--white);
+}
+
+.eol-pricing-table td:nth-child(2) {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.eol-pricing-table td:nth-child(3) {
+  color: var(--deep-sea-green);
+  font-weight: 600;
+}
+
+.eol-cta-section {
+  padding: 56px 0;
+}
+
+.eol-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.eol-contact__details {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.eol-contact__details p {
+  margin: 0;
+}

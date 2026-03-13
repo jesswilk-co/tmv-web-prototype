@@ -51,7 +51,7 @@ if (pricingToggleGroup) {
 
   const subtitleMap = {
     payg: 'Full flexibility, no commitment',
-    sub: 'Save \u00A3260+ per year with the Pack Membership',
+    sub: 'Save over \u00A3300 per year with the Pack Membership',
   };
 
   toggleBtns.forEach((btn) => {
@@ -108,7 +108,7 @@ if (faqFilterGroup) {
       );
 
       faqItems.forEach((item) => {
-        if (category === 'all' || item.dataset.category === category) {
+        if (category === 'all' || item.dataset.category.split(' ').includes(category)) {
           item.style.display = '';
         } else {
           item.style.display = 'none';
