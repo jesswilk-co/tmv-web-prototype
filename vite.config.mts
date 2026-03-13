@@ -12,6 +12,7 @@ export default defineConfig({
         pricing: 'pricing.html',
         aboutDrTony: 'about-dr-tony.html',
         services: 'services.html',
+        endOfLife: 'end-of-life.html',
         booking: 'booking.html',
       },
     },
