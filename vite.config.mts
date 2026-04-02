@@ -13,6 +13,7 @@ export default defineConfig({
         aboutDrTony: 'about-dr-tony.html',
         services: 'services.html',
         endOfLife: 'end-of-life.html',
+        terms: 'terms.html',
         booking: 'booking.html',
       },
     },
